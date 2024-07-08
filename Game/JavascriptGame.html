@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Guess Game</title>
+    <link rel="stylesheet" href="20pre.css">
+</head>
+<body>
+    <header>
+        <h1>Animal Guess Game</h1>
+    </header>
+
+    <main class="main-container">
+        <section class="quiz-container" aria-labelledby="quiz-section">
+            <div id="quiz"></div>
+            <button class="btn-primary" onclick="submitAnswers()">Submit Answers</button>
+            <div id="status-container">
+                <p id="status"></p>
+                <p id="eliminated">Eliminated Players: </p>
+            </div>
+        </section>
+        <aside class="scoreboard-container" id="scoreBoard" aria-labelledby="scoreboard-section">
+            <h3>Score Board</h3>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Animal Guess Game. All rights reserved.</p>
+    </footer>
+
+    <script src="20Pre.js"></script>
+</body>
+</html>
