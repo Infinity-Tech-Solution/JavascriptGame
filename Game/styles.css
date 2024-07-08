@@ -1,0 +1,122 @@
+:root {
+    --primary-color: #3498db;  /* Blue */
+    --secondary-color: #2ecc71; /* Green */
+    --bg-color: #ecf0f1;       /* Light grey */
+    --text-color: #2c3e50;     /* Dark blue */
+    --btn-hover-color: #2980b9; /* Darker blue */
+    --card-bg-color: #ffffff;   /* White */
+    --card-border-color: #bdc3c7; /* Grey */
+    --card-shadow-color: rgba(0, 0, 0, 0.1);
+    --header-footer-bg-color: var(--primary-color);
+    --header-footer-text-color: white;
+    --eliminated-color: #e74c3c; /* Red */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+header, footer {
+    background-color: var(--header-footer-bg-color);
+    color: var(--header-footer-text-color);
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 4px var(--card-shadow-color);
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 80px auto 60px;
+    padding: 20px;
+}
+
+.quiz-container,
+.scoreboard-container {
+    background: var(--card-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--card-shadow-color);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.scoreboard-container {
+    background-color: var(--secondary-color);
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.player-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.player-card {
+    background: var(--card-bg-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px var(--card-shadow-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--card-shadow-color);
+}
+
+.eliminated {
+    color: var(--eliminated-color);
+    font-weight: bold;
+}
+
+.btn-primary {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--primary-color);
+    color: var(--header-footer-text-color);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-hover-color);
+    transform: scale(1.05);
+}
+
+#status-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
